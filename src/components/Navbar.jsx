@@ -72,7 +72,7 @@ const Navbar = () => {
             </a>
           </li>
           <li className='w-40 h-14 flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-violet-800 hover:bg-gradient-to-r from-violet-500 to-violet-800'>
-            <a href="mailto:nishmanalari@gmail.com" target="_blank" rel="noopener noreferrer" className='flex justify-between items-center w-full text-gray-300 px-4'>
+            <a href="mailto:nalarinishma@gmail.com" target="_blank" rel="noopener noreferrer" className='flex justify-between items-center w-full text-gray-300 px-4'>
               Email <FaEnvelope size={30} />
             </a>
           </li>
