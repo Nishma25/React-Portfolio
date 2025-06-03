@@ -44,7 +44,7 @@ const Skills = () => {
           <motion.div
             key={skillGroup.title}
             variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-            className="card p-5 rounded-2xl sm:w-[360px] w-full shadow-md"
+            className="card p-5 rounded-2xl w-full min-w-0 shadow-md"
           >
             <h3 className="text-text dark:text-text-dark text-[20px] font-bold">{skillGroup.title}</h3>
             <div className="mt-4 flex flex-wrap gap-2">
