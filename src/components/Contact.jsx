@@ -1,30 +1,109 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { styles } from '../styles';
+import { SectionWrapper } from '../hoc';
+import { fadeIn, textVariant } from '../utils/motion';
+import { FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaGithub, FaUserCheck, FaCalendarAlt, FaIdBadge } from 'react-icons/fa';
+
+const contactInfo = [
+  {
+    label: 'Email',
+    value: 'nalarinishma@gmail.com',
+    href: 'mailto:nalarinishma@gmail.com',
+    icon: <FaEnvelope className="text-accent-green text-lg" />,
+  },
+  {
+    label: 'Location',
+    value: 'Dallas, Texas',
+    icon: <FaMapMarkerAlt className="text-accent-green text-lg" />,
+  },
+  {
+    label: 'LinkedIn',
+    value: 'linkedin.com/in/nalari-nishma/',
+    href: 'https://linkedin.com/in/nalari-nishma/',
+    icon: <FaLinkedin className="text-accent-green text-lg" />,
+  },
+  {
+    label: 'GitHub',
+    value: 'github.com/Nishma25',
+    href: 'https://github.com/Nishma25',
+    icon: <FaGithub className="text-accent-green text-lg" />,
+  },
+];
+
+const availability = [
+  {
+    label: 'Status',
+    value: 'Open to Opportunities',
+    icon: <FaUserCheck className="text-accent-green text-lg" />,
+  },
+  {
+    label: 'Graduation',
+    value: 'May 2025',
+    icon: <FaCalendarAlt className="text-accent-green text-lg" />,
+  },
+  {
+    label: 'Work Authorization',
+    value: 'F-1 Student Visa (STEM OPT Eligible)',
+    icon: <FaIdBadge className="text-accent-green text-lg" />,
+  },
+];
 
 const Contact = () => {
-    return (
-        // Main container with full height and centering
-        <div name='contact' className='w-full h-screen bg-[#0a192f] flex justify-center items-center p-4'>
-            {/* Form wrapper with max width */}
-            <div className='flex flex-col max-w-[600px] w-full'>
-                {/* Header section */}
-                <div className='pb-8 flex flex-col justify-center w-full h-full items-center'>
-                    <p className='text-4xl font-bold inline border-b-4 border-violet-800 text-gray-300'>Contact</p>
-                    <p className='text-gray-300 py-4'>Send me a message</p>
-                    <form className='pb-8 flex flex-col justify-center w-full h-full' action="https://formsubmit.co/iithnishma@gmail.com" method="POST">
-                        <input className='bg-[#ccd6f6] p-2' type="text" placeholder='Name' name='name' id="name" required />
-                        <input className='my-4 p-2 bg-[#ccd6f6]' type="email" placeholder='Email' name='email' id="email" required />
-                        <textarea className='bg-[#ccd6f6] p-2' name="message" rows="10" placeholder='Message' id="message" required></textarea>
+  return (
+    <div className="mt-12 card rounded-[20px] p-4 sm:p-8">
+      <motion.div variants={textVariant()}>
+        <p className="text-accent-green text-lg font-semibold">04. Get in touch</p>
+        <h2 className="text-4xl sm:text-5xl font-extrabold text-text dark:text-text-dark font-sans mt-2 mb-4">Contact</h2>
+      </motion.div>
 
-                        {/* Mailto link with pre-filled email */}
-                        <button type="submit" className='text-white border-2 hover:bg-cyan-500 hover:border-cyan-500 px-4 py-3 my-8 mx-auto flex items-center'>Let's Collaborate</button>
-                    </form>
+      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Contact Info */}
+        <motion.div
+          variants={fadeIn("right", "spring", 0.5, 0.75)}
+          className="card p-6 rounded-2xl w-full shadow-md flex flex-col gap-4 justify-center"
+        >
+          <h3 className="text-text dark:text-text-dark text-[20px] font-bold mb-2">Contact Information</h3>
+          <ul className="space-y-4">
+            {contactInfo.map((item, idx) => (
+              <li key={item.label} className="flex items-center gap-3">
+                {item.icon}
+                <div>
+                  <div className="text-secondary text-secondary dark:text-accent-green text-[14px] font-semibold">{item.label}</div>
+                  {item.href ? (
+                    <a href={item.href} target="_blank" rel="noopener noreferrer" className="text-text dark:text-white text-[16px] hover:text-accent-green transition-colors duration-200 font-mono">
+                      {item.value}
+                    </a>
+                  ) : (
+                    <div className="text-text dark:text-white text-[16px] font-mono">{item.value}</div>
+                  )}
                 </div>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
 
-                {/* Form inputs */}
-
-            </div>
-        </div>
-    );
+        {/* Availability */}
+        <motion.div
+          variants={fadeIn("left", "spring", 0.5, 0.75)}
+          className="card p-6 rounded-2xl w-full shadow-md flex flex-col gap-4 justify-center"
+        >
+          <h3 className="text-text dark:text-text-dark text-[20px] font-bold mb-2">Availability</h3>
+          <ul className="space-y-4">
+            {availability.map((item, idx) => (
+              <li key={item.label} className="flex items-center gap-3">
+                {item.icon}
+                <div>
+                  <div className="text-secondary text-secondary dark:text-accent-green text-[14px] font-semibold">{item.label}</div>
+                  <div className="text-text dark:text-white text-[16px] font-mono">{item.value}</div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+      </div>
+    </div>
+  );
 };
 
-export default Contact;
+export default SectionWrapper(Contact, "contact");

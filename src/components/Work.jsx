@@ -1,72 +1,191 @@
 //Works.jsx
-import React from 'react';
-import code from '../assets/code2.png';
-import quizUp from '../assets/quizUp.png';
-import sdbms from '../assets/sdbms.png';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { styles } from '../styles';
+import { SectionWrapper } from '../hoc';
+import { fadeIn, textVariant } from '../utils/motion';
+
+const companies = [
+  {
+    name: 'Elevance Health',
+    roles: [
+      {
+        title: 'Software Engineer II',
+        date: 'May 2022 - July 2023',
+        points: [
+          'Led development of enterprise web portal using Angular, achieving 35% reduction in bundle size',
+          'Implemented secure RESTful APIs with 92% unit test coverage and CI/CD integration',
+          'Enhanced system performance, reducing API response latency by 70%',
+        ],
+      },
+      {
+        title: 'Software Engineer',
+        date: 'June 2021 - April 2022',
+        points: [
+          'Optimized React Native app performance, improving user retention by 30%',
+          'Developed reusable UI component library increasing reusability by 44%',
+          'Implemented comprehensive CI/CD pipelines with AWS, GCP, and Azure',
+        ],
+      },
+    ],
+  },
+  // Add more companies here if needed
+];
+
+const projects = [
+  {
+    name: 'Nexquared',
+    title: 'Nexquared - Job Portal Platform',
+    date: 'Production Web Application | March 2025 - present',
+    points: [
+      'Engineered full-stack job portal using Next.js, TypeScript, and Go',
+      'Achieved 95+ Lighthouse performance score with Tailwind CSS',
+      'Implemented Docker containerization and CI/CD pipeline',
+    ],
+    link: {
+      label: 'Live Demo',
+      url: 'https://app.nexquared.com/',
+      icon: '��',
+    },
+  },
+  {
+    name: 'Feast-IT',
+    title: 'Feast-IT - Food Delivery Platform',
+    date: 'Full-Stack Web Application | January 2025 - April 2025',
+    points: [
+      'Developed multi-role platform with React.js and Flask',
+      'Achieved 99.9% system uptime with optimized database queries',
+      'Reduced page load times by 45% through frontend optimization',
+    ],
+    link: {
+      label: 'GitHub',
+      url: 'https://github.com/Nishma25/FeastIt-app/blob/main/README.md',
+      icon: '🐙',
+    },
+  },
+  // Add more projects here if needed
+];
 
 const Work = () => {
-  return (
-    // Main container with responsive height
-    <div name='work' className='w-full md:h-screen text-gray-300 bg-[#0a192f]'>
-      <div className='max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full'>
-        {/* Section header */}
-        <div className='pb-8 w-full flex justify-center items-center flex-col'>
-          <p className='text-4xl font-bold inline border-b-4 text-gray-300 border-cyan-500'>Work</p>
-          <p className='py-6 text-2xl'>Check out some of my most recent work</p>
-        </div>
+  const [activeTab, setActiveTab] = useState(0);
+  const [activeProjectTab, setActiveProjectTab] = useState(0);
+  const company = companies[activeTab];
+  const project = projects[activeProjectTab];
 
-        {/* Project grid */}
-        <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-4'>
-          {/* Project card with hover overlay */}
-            {/* Background Image Div */}
-            <div
-              className='bg-quiz-up bg-cover bg-center hover:bg-none transition-all duration-500 shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div bg-[quizUp]hover:bg-none'
+  return (
+    <div className="mt-12 card rounded-[20px] p-4 sm:p-8">
+      <motion.div variants={textVariant()}>
+        <p className="text-accent-green text-lg font-semibold">02. Where I've Worked</p>
+        <h2 className="text-4xl sm:text-5xl font-extrabold text-text dark:text-text-dark font-sans mt-2 mb-4 border-b border-white/10 pb-2">Professional Experience</h2>
+      </motion.div>
+      <div className="mt-8 flex flex-col md:flex-row gap-4">
+        {/* Tabs */}
+        <div className="flex md:flex-col gap-2 md:min-w-[180px]">
+          {companies.map((c, idx) => (
+            <button
+              key={c.name}
+              onClick={() => setActiveTab(idx)}
+              className={`px-4 py-2 text-left rounded-md font-mono text-[18px] transition-all duration-200
+                ${activeTab === idx ? 'bg-background dark:bg-background-dark text-accent-green border-l-4 border-accent-green font-bold' : 'text-text-secondary dark:text-text-secondary hover:bg-white/10'}`}
             >
-            {/* Content Div */}
-            <div className="opacity-0 group-hover:opacity-100 group-hover:bg-transparent flex justify-center items-center flex-col transition-opacity duration-300">
-              <span className="text-lg font-bold text-white text-center tracking-wider">Quiz Up</span>
-              <p className="text-center">Interactive Quiz Portal with dynamic rendering</p>
-              {/* Action buttons */}
-              <div className="pt-8 text-center">
-                <a href="https://nishma25.github.io/Quiz-Up/" target="_blank" rel="noopener noreferrer">
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Demo
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div
-            className='bg-oops bg-cover bg-center hover:bg-none transition-all duration-500 shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div'
-          >
-            {/* Hover content */}
-            <div className='opacity-0 group-hover:opacity-100 flex justify-center items-center flex-col'>
-              <span className='text-lg font-bold text-white text-center tracking-wider'>Scooter Rental Managment System</span>
-              <p className='text-center'>Implemented an object-oriented scooter rental management system</p>
-              {/* Action buttons */}
-              <div className='pt-8 text-center'>
-                <a href='https://github.com/Nishma25/Scooter-Rental-Management-System' target="_blank" rel="noopener noreferrer"><button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Code</button></a>
-              </div>
-            </div>
-          </div>
-          <div
-            className='bg-sdbms bg-cover bg-center hover:bg-none transition-all duration-500  shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div'
-          >
-            {/* Hover content */}
-            <div className='opacity-0 group-hover:opacity-100 flex justify-center items-center flex-col'>
-              <span className='text-lg font-bold text-white text-center tracking-wider'>Student Database Management System</span>
-              <p className='text-center'>Comprehensive web-based platform designed to centralize and streamline student data management and services at a university</p>
-              {/* Action buttons */}
-              <div className='pt-8 text-center'>
-                <a href='https://www.figma.com/proto/tCAsJ9WnzgLOavWSBQ2eCP/Sweeety-exams-s-team-library?node-id=3318-73&t=W9KLdWFTto3grg1q-1'  target="_blank"><button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Demo</button></a>
-              </div>
-            </div>
-          </div>
-          {/* Additional project cards follow same pattern */}
+              {c.name}
+            </button>
+          ))}
         </div>
+        {/* Content */}
+        <motion.div
+          key={company.name}
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex-1"
+        >
+          {company.roles.map((role, idx) => (
+            <div key={role.title} className="mb-4">
+              <h3 className="text-[22px] font-bold text-text dark:text-white">
+               {role.title}   {/*<span className="text-accent-green font-mono">@ {company.name}</span> */}
+              </h3>
+              <p className="text-text-secondary dark:text-accent-green text-[15px] mb-2 font-mono">{role.date}</p>
+              <ul className="ml-4 space-y-2">
+                {role.points.map((point, i) => (
+                  <motion.li
+                    key={i}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.1 * i, duration: 0.4 }}
+                    className="flex items-start gap-2 text-text-secondary dark:text-white text-[16px]"
+                  >
+                    <span className="text-accent-green mt-1">▸</span>
+                    <span>{point}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </motion.div>
+      </div>
+      {/* Technical Projects Section as Tabs */}
+      <motion.div variants={textVariant()} className="mt-12">
+        <h2 className="text-4xl sm:text-5xl font-extrabold text-text dark:text-text-dark font-sans mt-2 mb-4 border-b border-white/10 pb-2">Projects</h2>
+      </motion.div>
+      <div className="mt-8 flex flex-col md:flex-row gap-4">
+        {/* Project Tabs */}
+        <div className="flex md:flex-col gap-2 md:min-w-[180px]">
+          {projects.map((p, idx) => (
+            <button
+              key={p.name}
+              onClick={() => setActiveProjectTab(idx)}
+              className={`px-4 py-2 text-left rounded-md font-mono text-[18px] transition-all duration-200
+                ${activeProjectTab === idx
+                  ? 'bg-background dark:bg-background-dark text-accent-green border-l-4 border-accent-green font-bold'
+                  : 'text-gray-400 dark:text-gray-300 hover:text-accent-green hover:bg-white/10'}
+              `}
+            >
+              {p.name}
+            </button>
+          ))}
+        </div>
+        {/* Project Content */}
+        <motion.div
+          key={project.name}
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex-1"
+        >
+          <h3 className="text-[22px] font-bold text-text dark:text-white">
+            {project.title}
+          </h3>
+          {project.link && (
+            <a
+              href={project.link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-accent-green hover:text-accent font-semibold text-[15px] mt-1 mb-2 transition-colors duration-200"
+            >
+              <span>{project.link.icon}</span>
+              <span>{project.link.label}</span>
+            </a>
+          )}
+          <p className="text-text-secondary dark:text-accent-green text-[15px] mb-2 font-mono">{project.date}</p>
+          <ul className="ml-4 space-y-2">
+            {project.points.map((point, i) => (
+              <motion.li
+                key={i}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.1 * i, duration: 0.4 }}
+                className="flex items-start gap-2 text-text-secondary dark:text-white text-[16px]"
+              >
+                <span className="text-accent-green mt-1">▸</span>
+                <span>{point}</span>
+              </motion.li>
+            ))}
+          </ul>
+        </motion.div>
       </div>
     </div>
   );
 };
 
-export default Work;
+export default SectionWrapper(Work, "work");

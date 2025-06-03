@@ -1,32 +1,67 @@
 import React from 'react';
-const skills = ["Python", "React", "ReactNative","AWS","HTML","Flask","Github","CSS","Node.js","SQL","JavsScript","Hadoop"];
+import { motion } from 'framer-motion';
+import { styles } from '../styles';
+import { SectionWrapper } from '../hoc';
+import { fadeIn, textVariant } from '../utils/motion';
 
 const Skills = () => {
-    return (
-        // Main container with dark background
-        <div name='skills' className='w-full h-screen bg-[#0a192f] text-gray-300'>
-            {/* Content wrapper with max width and centering */}
-            <div className='max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full'>
-                {/* Header section with title and intro */}
-                <div className='w-full flex justify-center items-center flex-col mb-7'>
-                    <p className='text-4xl font-bold inline border-b-4 border-cyan-500 text-center'>Skills</p>
-                    <p className='py-4 text-2xl'>I enjoy diving into and learning new things. Here's a list of technologies I've worked with</p>
-                </div>
-                {/* Skills grid - responsive layout with hover effects */}
-                <div className='w-full grid grid-cols-3 sm:grid-cols-3 gap-4 text-center py-8'>
-                    {/* Individual skill cards with shadow and scale animation */}
-                    {skills.map((skill, index) => (
-                        <div className="grid gap-4">
-                            <div key={index} className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
-                                <p className="my-4">{skill}</p>
-                            </div>
-                        </div>
-                    ))}
-                    {/* Additional skill cards follow same pattern... */}
-                </div>
+  const skills = [
+    {
+      title: "Programming Languages",
+      skills: ["Python", "JavaScript", "TypeScript", "C", "SQL", "VBA", "R", "Go"]
+    },
+    {
+      title: "Frontend Technologies",
+      skills: ["React", "Angular", "Next.js", "React Native", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap"]
+    },
+    {
+      title: "Backend Technologies",
+      skills: ["Node.js", "Flask", "FastAPI", ".NET Framework", "Express.js", "RESTful APIs"]
+    },
+    {
+      title: "Database & Cloud",
+      skills: ["MySQL", "PostgreSQL", "MongoDB", "AWS", "GCP", "Azure", "Docker", "CI/CD"]
+    },
+    {
+      title: "Development Tools",
+      skills: ["VS Code", "Postman", "JIRA", "SonarQube", "Figma", "Tableau", "Jupyter"]
+    },
+    {
+      title: "Big Data",
+      skills: ["Apache Pig", "Apache Impala", "PySpark", "Hadoop HDFS"]
+    }
+  ];
+
+  return (
+    <div className="mt-20 card rounded-[20px] p-6 sm:p-10">
+      <motion.div variants={textVariant()}>
+        <p className="text-accent-green text-lg font-semibold">03. What I am good at</p>
+        <h2 className="text-4xl sm:text-5xl font-extrabold text-text dark:text-text-dark font-sans mt-2 mb-4">Technical Skills</h2>
+      </motion.div>
+
+      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {skills.map((skillGroup, index) => (
+          <motion.div
+            key={skillGroup.title}
+            variants={fadeIn("right", "spring", index * 0.5, 0.75)}
+            className="card p-5 rounded-2xl sm:w-[360px] w-full shadow-md"
+          >
+            <h3 className="text-text dark:text-text-dark text-[20px] font-bold">{skillGroup.title}</h3>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {skillGroup.skills.map((skill) => (
+                <span
+                  key={skill}
+                  className="text-[14px] text-secondary dark:text-white bg-accent/10 dark:bg-accent-green/30 px-3 py-1 rounded-full font-sans"
+                >
+                  {skill}
+                </span>
+              ))}
             </div>
-        </div>
-    );
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
-export default Skills;
+export default SectionWrapper(Skills, "skills");
