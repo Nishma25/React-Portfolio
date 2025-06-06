@@ -53,8 +53,8 @@ const Contact = () => {
   return (
     <div className="mt-12 card rounded-[20px] p-4 sm:p-8">
       <motion.div variants={textVariant()}>
-        <p className="text-accent-green text-lg font-semibold">04. Get in touch</p>
-        <h2 className="text-4xl sm:text-5xl font-extrabold text-text dark:text-text-dark font-sans mt-2 mb-4">Contact</h2>
+        <p className="text-accent-green text-lg font-semibold">05. Get in touch</p>
+        <h2 className="text-4xl sm:text-5xl font-extrabold text-text dark:text-text-dark font-sans mt-2 mb-4">Contact.</h2>
       </motion.div>
 
       <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">

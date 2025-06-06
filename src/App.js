@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import About from './components/About';
 import Contact from './components/Contact';
@@ -5,6 +6,7 @@ import Home from './components/Home';
 import Navbar from './components/Navbar';
 import Skills from './components/Skills';
 import Work from './components/Work';
+import Projects from './components/Projects';
 import SocialLinks from './components/SocialLinks';
 import { ThemeProvider } from './context/ThemeContext';
 
@@ -19,6 +21,7 @@ function App() {
         </div>
         <About />
         <Work />
+        <Projects />
         <Skills />
         <Contact />
       </div>

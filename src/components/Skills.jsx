@@ -16,11 +16,11 @@ const Skills = () => {
     },
     {
       title: "Backend Technologies",
-      skills: ["Node.js", "Flask", "FastAPI", ".NET Framework", "Express.js", "RESTful APIs"]
+      skills: ["Node.js", "Flask", "FastAPI", ".NET Framework", "RESTful APIs"]
     },
     {
       title: "Database & Cloud",
-      skills: ["MySQL", "PostgreSQL", "MongoDB", "AWS", "GCP", "Azure", "Docker", "CI/CD"]
+      skills: ["MySQL", "PostgreSQL", "MongoDB", "AWS", "Azure", "Docker", "CI/CD"]
     },
     {
       title: "Development Tools",
@@ -35,8 +35,8 @@ const Skills = () => {
   return (
     <div className="mt-20 card rounded-[20px] p-6 sm:p-10">
       <motion.div variants={textVariant()}>
-        <p className="text-accent-green text-lg font-semibold">03. What I am good at</p>
-        <h2 className="text-4xl sm:text-5xl font-extrabold text-text dark:text-text-dark font-sans mt-2 mb-4">Technical Skills</h2>
+        <p className="text-accent-green text-lg font-semibold">04. What I am good at</p>
+        <h2 className="text-4xl sm:text-5xl font-extrabold text-text dark:text-text-dark font-sans mt-2 mb-4">Technical Skills.</h2>
       </motion.div>
 
       <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
