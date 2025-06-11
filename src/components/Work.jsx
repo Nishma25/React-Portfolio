@@ -50,7 +50,7 @@ const Work = () => {
               key={c.name}
               onClick={() => setActiveTab(idx)}
               className={`px-4 py-2 text-left rounded-md font-mono text-[18px] transition-all duration-200
-                ${activeTab === idx ? 'bg-background dark:bg-background-dark text-accent-green border-l-4 border-accent-green font-bold' : 'text-text-secondary dark:text-text-secondary hover:bg-white/10'}`}
+                ${activeTab === idx ? 'bg-background dark:bg-background-dark text-accent-green border-l-4 border-accent-green font-bold' : 'text-gray-400 dark:text-gray-400 hover:text-accent-green hover:bg-white/10'}`}
             >
               {c.name}
             </button>

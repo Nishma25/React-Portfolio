@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { styles } from '../styles';
 import { SectionWrapper } from '../hoc';
 import { fadeIn, textVariant } from '../utils/motion';
-import { FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaGithub, FaUserCheck, FaCalendarAlt, FaIdBadge } from 'react-icons/fa';
+import { FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaGithub, FaUserCheck, FaCalendarAlt, FaIdBadge, FaFileAlt } from 'react-icons/fa';
 
 const contactInfo = [
   {
@@ -28,6 +28,12 @@ const contactInfo = [
     value: 'github.com/Nishma25',
     href: 'https://github.com/Nishma25',
     icon: <FaGithub className="text-accent-green text-lg" />,
+  },
+  {
+    label: 'Resume',
+    value: 'View Resume',
+    href: 'https://drive.google.com/file/d/18UAJNUWeQ50h9rUOPacur6HU8M_-aKjX/view?usp=sharing',
+    icon: <FaFileAlt className="text-accent-green text-lg" />,
   },
 ];
 

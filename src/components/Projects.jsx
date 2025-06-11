@@ -132,7 +132,7 @@ const Projects = () => {
                             className={`px-4 py-2 rounded-md font-mono text-[18px] transition-all duration-200
                 ${activeCategory === idx
                                     ? 'bg-background dark:bg-background-dark text-accent-green border-l-4 border-accent-green font-bold'
-                                    : 'text-text-secondary dark:text-text-secondary hover:bg-white/10'}`}
+                                    : 'text-gray-700 dark:text-white font-semibold hover:text-accent-green hover:bg-white/10'}`}
                         >
                             {cat.name}
                         </button>
@@ -148,7 +148,7 @@ const Projects = () => {
                             className={`px-4 py-2 text-left rounded-md font-mono text-[18px] transition-all duration-200
                 ${activeProject === idx
                                     ? 'bg-background dark:bg-background-dark text-accent-green border-l-4 border-accent-green font-bold'
-                                    : 'text-gray-400 dark:text-gray-300 hover:text-accent-green hover:bg-white/10'}
+                                    : 'text-gray-700 dark:text-white font-semibold hover:text-accent-green hover:bg-white/10'}
               `}
                         >
                             {p.name}

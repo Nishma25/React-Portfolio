@@ -51,9 +51,8 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-text-secondary dark:text-white text-[17px] max-w-3xl leading-[30px] font-sans"
       >
-        I'm a full-stack engineer with 2+ years of experience building robust, user-centric web applications. 
-        I'm actively seeking full-time opportunities where I can contribute to impactful products and grow alongside a collaborative engineering team.
-      </motion.p>
+        I’m a full-stack engineer with over two years of experience developing scalable, user-focused web applications.
+        I’m currently seeking full-time opportunities where I can contribute to meaningful products and continue growing within a collaborative and forward-thinking engineering team.      </motion.p>
 
       <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Education Timeline */}

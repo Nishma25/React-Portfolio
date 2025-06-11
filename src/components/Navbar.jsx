@@ -159,6 +159,17 @@ const Navbar = () => {
                     </ScrollLink>
                   </li>
                 ))}
+                <li>
+                  <a
+                    href={RESUME_LINK}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-secondary dark:text-accent-green hover:text-accent dark:hover:text-accent text-[16px] font-medium cursor-pointer font-sans transition-colors duration-300"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Resume
+                  </a>
+                </li>
               </ul>
             </motion.div>
           )}
