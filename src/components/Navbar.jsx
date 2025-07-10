@@ -17,7 +17,7 @@ import { Link as ScrollLink } from 'react-scroll';
 import { motion } from 'framer-motion';
 import { styles } from '../styles';
 
-const RESUME_LINK = 'https://drive.google.com/file/d/18UAJNUWeQ50h9rUOPacur6HU8M_-aKjX/view?usp=sharing';
+const RESUME_LINK = 'https://drive.google.com/file/d/1sorrKeTglYwcXQYl2mgoPoOoLVjhwrQd/view?usp=drive_link';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

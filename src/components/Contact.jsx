@@ -32,7 +32,7 @@ const contactInfo = [
   {
     label: 'Resume',
     value: 'View Resume',
-    href: 'https://drive.google.com/file/d/18UAJNUWeQ50h9rUOPacur6HU8M_-aKjX/view?usp=sharing',
+    href: 'https://drive.google.com/file/d/1sorrKeTglYwcXQYl2mgoPoOoLVjhwrQd/view?usp=drive_link',
     icon: <FaFileAlt className="text-accent-green text-lg" />,
   },
 ];
@@ -50,7 +50,7 @@ const availability = [
   },
   {
     label: 'Work Authorization',
-    value: 'F-1 Student Visa (STEM OPT Eligible)',
+    value: 'F-1 OPT (STEM Eligible)',
     icon: <FaIdBadge className="text-accent-green text-lg" />,
   },
 ];
@@ -92,7 +92,7 @@ const Contact = () => {
         {/* Availability */}
         <motion.div
           variants={fadeIn("left", "spring", 0.5, 0.75)}
-          className="card p-6 rounded-2xl w-full shadow-md flex flex-col gap-4 justify-center"
+          className="card p-6 rounded-2xl w-full shadow-md flex flex-col gap-4 justify-start"
         >
           <h3 className="text-text dark:text-text-dark text-[20px] font-bold mb-2">Availability</h3>
           <ul className="space-y-4">

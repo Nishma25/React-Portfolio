@@ -10,7 +10,7 @@ const projectCategories = [
         projects: [
             {
                 name: 'Nexquared',
-                title: 'Nexquared - Job Portal Platform',
+                title: 'Job Portal Platform',
                 date: 'Production Web Application | March 2025 - present',
                 points: [
                     'Engineered full-stack job portal using Next.js, TypeScript, and Go',
@@ -25,7 +25,7 @@ const projectCategories = [
             },
             {
                 name: 'Feast-IT',
-                title: 'Feast-IT - Food Delivery Platform',
+                title: 'Food Delivery Platform',
                 date: 'Full-Stack Web Application | January 2025 - April 2025',
                 points: [
                     'Developed multi-role platform with React.js and Flask',
@@ -37,6 +37,30 @@ const projectCategories = [
                     url: 'https://github.com/Nishma25/FeastIt-app/blob/main/README.md',
                     icon: '🐙',
                 },
+            },
+        ],
+    },
+    {
+        name: 'ML&AI',
+        projects: [
+            {
+                name: 'PDF-Summarizer',
+                title: 'PDF Summarizer',
+                date: 'LLM-Powered Application | March 2025 - April 2025',
+                points: [
+                    'Built a GenAI-powered document summarizer using Python, PyPDF2, and OpenAI & Google Generative AI APIs to reduce manual document review time by over 80%',
+                    'Engineered batch-processing pipelines for context-aware summarization using Pandas and LLMs, improving parsing accuracy and scalability',
+                    'Designed a modular architecture with secure API configuration via dotenv, enabling extensibility for future Q&A and multi-doc use cases',
+                ],
+            },
+            {
+                name: 'UberFare Estimator',
+                title: 'Uber and Lyft Ride Price Prediction',
+                date: 'Machine Learning Web Application | September 2024 - December 2024',
+                points: [
+                    'Built a web app to predict real-time Uber/Lyft fares using FastAPI, scikit-learn, and a Random Forest model',
+                    'Enabled dynamic fare simulations through AJAX workflows, interactive UI inputs, and Pydantic-validated RESTful APIs for reliable real-time predictions',
+                ],
             },
         ],
     },

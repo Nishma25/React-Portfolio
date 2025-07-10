@@ -16,15 +16,15 @@ const Skills = () => {
     },
     {
       title: "Backend Technologies",
-      skills: ["Node.js", "Flask", "FastAPI", ".NET Framework", "RESTful APIs"]
+      skills: ["Node.js", "Flask", "FastAPI", "RESTful APIs"]
     },
     {
       title: "Database & Cloud",
-      skills: ["MySQL", "PostgreSQL", "MongoDB", "AWS", "Azure", "Docker", "CI/CD"]
+      skills: ["MySQL", "PostgreSQL", "AWS", "Docker"]
     },
     {
       title: "Development Tools",
-      skills: ["VS Code", "Postman", "JIRA", "SonarQube", "Figma", "Tableau", "Jupyter"]
+      skills: ["VS Code", "Git","Cursor", "Postman", "JIRA", "SonarQube", "Figma", "Tableau", "Jupyter"]
     },
     {
       title: "Big Data",
