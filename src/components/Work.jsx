@@ -7,6 +7,21 @@ import { fadeIn, textVariant } from '../utils/motion';
 
 const companies = [
   {
+    name: 'Open Legal',
+    roles: [
+      {
+        title: 'Software Developer Intern',
+        date: 'July 2025 - Present',
+        points: [
+          'Building PDF processing pipelines with Python, AWS (S3, Textract, Bedrock), and FastAPI to handle hundreds of pages, enabling automated analysis and storage',
+          'Implementing robust logging, error handling, and test coverage, improving overall system stability',
+          'Developing micro-frontend apps using React, Webpack Module Federation, and Docker',
+          'Designed backend services with SQLite/PostgreSQL for session management and document tracking across multiple concurrent users',
+        ],
+      },
+    ],
+  },
+  {
     name: 'Elevance Health',
     roles: [
       {

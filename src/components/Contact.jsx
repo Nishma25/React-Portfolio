@@ -32,7 +32,7 @@ const contactInfo = [
   {
     label: 'Resume',
     value: 'View Resume',
-    href: 'https://drive.google.com/file/d/1sorrKeTglYwcXQYl2mgoPoOoLVjhwrQd/view?usp=drive_link',
+    href: 'https://drive.google.com/file/d/1zSwPzuOBnNK7fDEqQrjgife9FWfDAdWi/view?usp=sharing',
     icon: <FaFileAlt className="text-accent-green text-lg" />,
   },
 ];
